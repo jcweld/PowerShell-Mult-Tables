@@ -1,5 +1,5 @@
 <#
-This is a basic math practice program for Lucy and Amelia. Lucy will get multiplication, and Amelia will get addition and subtraction.
+This is a basic math practice program for Lucy and Amelia. Luciana will get multiplication, and Amelia will get addition and subtraction.
 
 #>
 
