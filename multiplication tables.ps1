@@ -1,12 +1,12 @@
 <#
-This is a basic math practice program for Lucy and Amelia. Luciana will get multiplication, and Amelia will get addition and subtraction.
-
+This is a basic math practice program for Lucy and Amelia. Luciana will get multiplication, and Amelia will get addition subtraction.
+Future enhancements should also give Amelia subtraction problems.
 #>
 
-cls
-# Header comments to introduce user to the game:
-
-[int]$nameinput = Read-Host "Who are you? Please enter 1 for Lucy and 2 for Amelia. Don't forget to his enter afterwards!"
+Clear-Host
+# Header comments to introduce user to the game and identify who is playing:
+#bug in below code, if a string is entered, error is displayed (bad) and proceeds as Amelia (okay).
+[Int]$nameinput = Read-Host "Who are you? Please enter 1 for Lucy and 2 for Amelia. Don't forget to his enter afterwards!"
 switch ($nameinput) {
 	1 {$name = "Luciana"
 	Write-Host "Okay. Welcome back, Luciana. You look beautiful today. Get ready for some multiplication!"}
@@ -20,7 +20,7 @@ Write-Host "Welcome to your practice math program."
 Write-Host "Enter your answer to each problem and hit Enter."
 
 $totalwrong=0
-#this is where we set total number of questions:
+#this is where we set total number of questions (a future enhancement can ask the user for this as a variable):
 for ($i=1; $i -le 3;$i++){
 
 #the variables presented in the questions:
@@ -48,7 +48,7 @@ if ($useranswer -eq $correctanswer) {
 	
 While ($answerstatus -eq $false)
 
-Write-Host 'Your session is over. You answered incorrectly '$totalwrong' times and completed this many qustions: '$i''
+
 }
 
 
@@ -74,8 +74,12 @@ if ($useranswer -eq $correctanswer) {
 	$totalwrong=$totalwrong +1}
 	}
 While ($answerstatus -eq $false)
-Write-Host 'Your session is over. You answered incorrectly '$totalwrong' times and completed this many qustions: '$i''
-}}
 
+}
 
+}
+
+$num_correct = $i-1
+Write-Host 'Your session is over. You answered incorrectly'$totalwrong' times and completed this many questions: '$num_correct''
+Write-Host "Keep practicing, $name!"
 
